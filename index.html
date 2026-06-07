@@ -7,113 +7,118 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
-        <span class="header-logo">music.story.es</span>
-        <button class="menu-icon">☰</button>
+        <a href="#inicio" class="header-logo">MUSIC EVOLVED</a>
+        <nav class="header-nav" id="site-menu" aria-label="Navegación principal">
+            <a href="#inicio">Inicio</a>
+            <a href="#historia">Historia</a>
+            <a href="#cierre">Final</a>
+        </nav>
+        <button class="menu-icon" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">La música<br>no dejó de cambiar.</h1>
-            <p class="hero-subtitle">Solo cambió la forma de escucha.</p>
-            <p class="hero-description">A lo largo de más de un siglo, hemos presenciado una transformación radical en cómo experimentamos la música. Desde el vinilo que giraba en nuestras salas, hasta la transmisión instantánea en nuestros bolsillos, cada formato ha dejado su huella en la cultura popular y en nuestras vidas.</p>
-            <div class="timeline-dot"></div>
-        </div>
-        <div class="hero-image">
-            <img src="" alt="Vinilo" class="hero-img">
-        </div>
-    </section>
+    <main>
+        <section class="hero" id="inicio">
+            <div class="hero-copy">
+                <p class="eyebrow">Historia de los formatos</p>
+                <h1>La música<br>no dejó de cambiar</h1>
+                <p class="hero-subtitle">Solo cambió la forma de escucharla.</p>
+                <p class="hero-text">Del ritual analógico al acceso instantáneo, cada soporte transformó nuestra relación con las canciones, los artistas y los recuerdos. Cambiaron los objetos, los hábitos y también la manera en que descubrimos, coleccionamos y compartimos música.</p>
+                <a href="#historia" class="scroll-cue">
+                    <span>Scroll</span>
+                    <i></i>
+                </a>
+            </div>
+            <div class="hero-visual" aria-hidden="true">
+                <div class="record-disc"></div>
+            </div>
+        </section>
 
-    <!-- Timeline Section -->
-    <section class="timeline">
-        <!-- Vinyl -->
-        <div class="timeline-item light-bg">
-            <div class="timeline-left">
-                <div class="timeline-year">1895 - 1979</div>
-                <h2>Vinilo</h2>
-                <p class="timeline-description">Escuchar en el hogar.<br>La música es donde vive.</p>
-                <p class="timeline-text">El vinilo revolucionó la forma en que las personas experimentaban la música. Por primera vez, podías llevar la música a casa, permitiendo que toda la familia se reuniera alrededor del tocadiscos. Era más que un dispositivo de reproducción; era un ritual, una ceremonia. La calidad del sonido, el tamaño del álbum con sus elaboradas portadas, y la necesidad de sentarse a escuchar todo el lado completo creaba una conexión más profunda con la música.</p>
-            </div>
-            <div class="timeline-right">
-                <img src="" alt="Vinilo" class="timeline-img">
-            </div>
-        </div>
+        <section class="timeline" id="historia" aria-label="Línea de tiempo de formatos musicales">
+            <article class="story-panel panel-vinyl">
+                <div class="story-copy">
+                    <p class="story-year">1950 - 1970</p>
+                    <h2>Vinilo</h2>
+                    <p>Escuchar era un ritual. La música se vivía con pausa, presencia y atención en cada detalle. Elegir un disco, apoyarlo en la bandeja y dejar caer la púa también era parte de la experiencia.</p>
+                </div>
+                <figure class="story-media">
+                    <img src="img/tocadiscos.png" alt="Tocadiscos reproduciendo un disco de vinilo">
+                </figure>
+            </article>
 
-        <!-- Cassette -->
-        <div class="timeline-item dark-bg">
-            <div class="timeline-left">
-                <img src="img/cassette.png" alt="Cassette" class="timeline-img">
-            </div>
-            <div class="timeline-right">
-                <div class="timeline-year">1963 - 1980</div>
-                <h2>Cassette</h2>
-                <p class="timeline-description">Portátil y grabable.<br>Tu música, tu forma.</p>
-                <p class="timeline-text">Los cassettes trajeron la libertad. De repente, la música no estaba confinada al hogar. Podías escuchar tus canciones favoritas en el auto, mientras corría o en cualquier lugar. Además, tenían una característica revolucionaria: podías grabar tu propia música. Esto permitió a los artistas independientes distribuir su trabajo y a los fans crear compilaciones personalizadas. El cassette fue la banda sonora de una generación en movimiento.</p>
-            </div>
-        </div>
+            <article class="story-panel panel-cassette">
+                <figure class="story-media">
+                    <img src="img/cassette.png" alt="Cassette negro con franja roja">
+                </figure>
+                <div class="story-copy">
+                    <p class="story-year">1970 - 1990</p>
+                    <h2>Cassette</h2>
+                    <p>Portátil, grabable y personal. Tu música podía viajar con vos a todas partes. Armar compilados, grabar canciones de la radio y prestarlos entre amigos volvió la escucha algo mucho más cotidiano e íntimo.</p>
+                </div>
+            </article>
 
-        <!-- CD -->
-        <div class="timeline-item light-bg">
-            <div class="timeline-left">
-                <div class="timeline-year">1982 - 1990</div>
-                <h2>CD</h2>
-                <p class="timeline-description">Sonido digital.<br>Escucha sin rasguños.</p>
-                <p class="timeline-text">Los discos compactos marcaron el salto a la era digital. Sin desgaste por rayones, con sonido cristalino y la capacidad de saltar entre canciones instantáneamente, los CDs ofrecieron una nueva forma de interactuar con la música. Eran pequeños, resistentes y ofrecían una capacidad de almacenamiento mucho mayor que sus predecesores. El CD llegó como la solución definitiva para los amantes de la música.</p>
-            </div>
-            <div class="timeline-right">
-                <img src="" alt="CD" class="timeline-img">
-            </div>
-        </div>
+            <article class="story-panel panel-cd">
+                <div class="story-copy">
+                    <p class="story-year">1990 - 2000</p>
+                    <h2>CD</h2>
+                    <p>Sonido digital, preciso y brillante. La escucha se volvió más limpia, directa y resistente. El CD consolidó una nueva idea de calidad y modernidad, con álbumes fáciles de transportar y conservar.</p>
+                </div>
+                <figure class="story-media">
+                    <img src="img/cd.png" alt="Disco compacto con reflejos de color">
+                </figure>
+            </article>
 
-        <!-- MP3 / iPod -->
-        <div class="timeline-item dark-bg">
-            <div class="timeline-left">
-                <img src="" alt="MP3 iPod" class="timeline-img">
-            </div>
-            <div class="timeline-right">
-                <div class="timeline-year">2001 - 2010</div>
-                <h2>MP3 / iPod</h2>
-                <p class="timeline-description">Miles de canciones.<br>En tu bolsillo.</p>
-                <p class="timeline-text">El iPod fue un punto de inflexión. "1000 canciones en tu bolsillo" - así anunciaron Apple su revolucionario dispositivo. De repente, toda tu biblioteca musical cabía en tu bolsillo. La compresión de audio MP3 permitió que miles de canciones ocuparan menos espacio que un solo CD. El cambio no fue solo tecnológico; fue cultural. La forma en que consumíamos música cambió para siempre.</p>
-            </div>
-        </div>
+            <article class="story-panel panel-dark panel-ipod">
+                <figure class="story-media">
+                    <img src="img/mp3.png" alt="Reproductor MP3 con auriculares">
+                </figure>
+                <div class="story-copy">
+                    <p class="story-year">2000 - 2010</p>
+                    <h2>MP3 / iPod</h2>
+                    <p>Miles de canciones en el bolsillo. La biblioteca musical dejó de ocupar espacio físico. Por primera vez, toda una colección podía acompañarte en movimiento, adaptándose al ritmo de cada día.</p>
+                </div>
+            </article>
 
-        <!-- Streaming -->
-        <div class="timeline-item light-bg">
-            <div class="timeline-left">
-                <div class="timeline-year">2008 - Hoy</div>
-                <h2>Streaming</h2>
-                <p class="timeline-description">Acceso ilimitado.<br>Escucha en todas partes.</p>
-                <p class="timeline-text">El streaming eliminó las barreras finales. Ya no necesitas descargar o comprar música. Con una conexión a internet, tienes acceso a millones de canciones al instante. Servicios como Spotify, Apple Music y YouTube Music transformaron la industria. El streaming cambió no solo cómo escuchamos, sino también cómo los artistas monetizan su trabajo. Es la música bajo demanda, personalizada, omnipresente.</p>
-            </div>
-            <div class="timeline-right">
-                <img src="" alt="Streaming" class="timeline-img">
-            </div>
-        </div>
+            <article class="story-panel panel-streaming">
+                <div class="story-copy">
+                    <p class="story-year">2010 - Hoy</p>
+                    <h2>Streaming</h2>
+                    <p>Acceso instantáneo, playlists y recomendaciones. La música encontró una nueva forma de estar siempre cerca. Ya no hizo falta poseerla: alcanzó con buscar, tocar play y dejar que el algoritmo también participara del viaje.</p>
+                </div>
+                <figure class="story-media">
+                    <img src="img/streaming.png" alt="Teléfono mostrando una app de música en streaming">
+                </figure>
+            </article>
 
-        <!-- Vinyl Hoy -->
-        <div class="timeline-item dark-bg">
-            <div class="timeline-left">
-                <img src="" alt="Vinilo Hoy" class="timeline-img">
-            </div>
-            <div class="timeline-right">
-                <div class="timeline-year">2015 - Hoy</div>
-                <h2>Vinilo hoy</h2>
-                <p class="timeline-description">Coleccionismo y nostalgia.<br>La belleza de lo analógico.</p>
-                <p class="timeline-text">En plena era digital, el vinilo experimentó un resurgimiento inesperado. No es coincidencia; es una reacción a la intangibilidad del streaming. Muchas personas redescubren el ritual de escuchar un álbum completo, de sostener la portada física, de ver girar el disco. El vinilo representa algo que el streaming no puede ofrecer: presencia, materialidad, y la pausa deliberada en un mundo que se mueve demasiado rápido.</p>
-            </div>
-        </div>
-    </section>
+            <article class="story-panel panel-vinyl-today">
+                <figure class="story-media">
+                    <img src="img/vinilo.png" alt="Detalle de una púa sobre un disco de vinilo">
+                </figure>
+                <div class="story-copy">
+                    <p class="story-year">Hoy</p>
+                    <h2>La vuelta de lo analógico</h2>
+                    <p>El regreso de lo analógico no es nostalgia vacía: es una experiencia, un objeto y una forma de expresarse. En tiempos de inmediatez, el vinilo recupera el valor de detenerse, mirar la tapa y escuchar con otra atención.</p>
+                </div>
+            </article>
+        </section>
 
-    <!-- Final Message -->
-    <section class="final-message">
-        <h2>El formato cambia.<br>La emoción permanece.</h2>
-        <p class="final-text">A través de cada transformación tecnológica, la esencia de la música ha permanecido constante. Ya sea en vinilo, cassette, CD, MP3 o streaming, lo que importa es la conexión que la música crea con nuestras emociones y recuerdos. Cada formato ha dejado su marca en la historia cultural, cada uno ha sido el preferido de una generación, y cada uno sigue siendo válido hoy.</p>
-        <p class="final-text">La música no dejó de cambiar, pero tampoco dejó de ser lo que siempre fue: la banda sonora de nuestras vidas.</p>
-        <div class="scroll-indicator">↓</div>
-    </section>
+        <section class="final-message" id="cierre">
+            <div class="sound-mark" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <h2>El formato cambia,<br>la emoción permanece.</h2>
+            <p>Cada tecnología dejó una huella distinta, pero la música siguió haciendo lo mismo de siempre: conectar momentos, personas y memorias. Lo que cambia no es su fuerza, sino el modo en que la llevamos con nosotros.</p>
+            <a href="#inicio" class="final-button">Volver al inicio</a>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>
