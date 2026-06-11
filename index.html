@@ -10,9 +10,9 @@
     <header class="header">
         <a href="#inicio" class="header-logo">MUSIC EVOLVED</a>
         <nav class="header-nav" id="site-menu" aria-label="Navegación principal">
-            <a href="#inicio">Inicio</a>
-            <a href="#historia">Historia</a>
-            <a href="#cierre">Final</a>
+            <a href="#inicio"><span class="nav-label nav-label-regular">Inicio</span><span class="nav-label nav-label-bold" aria-hidden="true">Inicio</span></a>
+            <a href="#historia"><span class="nav-label nav-label-regular">Historia</span><span class="nav-label nav-label-bold" aria-hidden="true">Historia</span></a>
+            <a href="#cierre"><span class="nav-label nav-label-regular">Final</span><span class="nav-label nav-label-bold" aria-hidden="true">Final</span></a>
         </nav>
         <button class="menu-icon" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-menu">
             <span></span>
@@ -24,8 +24,7 @@
     <main>
         <section class="hero" id="inicio">
             <div class="hero-copy">
-                <p class="eyebrow">Historia de los formatos</p>
-                <h1>La música<br>no dejó de cambiar</h1>
+                <h1 class="hero-title">La música<br>no cambió</h1>
                 <p class="hero-subtitle">Solo cambió la forma de escucharla.</p>
                 <p class="hero-text">Del ritual analógico al acceso instantáneo, cada soporte transformó nuestra relación con las canciones, los artistas y los recuerdos. Cambiaron los objetos, los hábitos y también la manera en que descubrimos, coleccionamos y compartimos música.</p>
                 <a href="#historia" class="scroll-cue">
@@ -64,7 +63,7 @@
             <article class="story-panel panel-cd">
                 <div class="story-copy">
                     <p class="story-year">1990 - 2000</p>
-                    <h2>CD</h2>
+                    <h2>Compact Disc</h2>
                     <p>Sonido digital, preciso y brillante. La escucha se volvió más limpia, directa y resistente. El CD consolidó una nueva idea de calidad y modernidad, con álbumes fáciles de transportar y conservar.</p>
                 </div>
                 <figure class="story-media">
@@ -120,6 +119,9 @@
         </section>
     </main>
 
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
     <script src="script.js"></script>
 </body>
 </html>
