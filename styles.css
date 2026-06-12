@@ -4,6 +4,22 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: "SF Pro";
+    src: url("fonts/SF-Pro.ttf") format("truetype");
+    font-weight: 1 1000;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: "SF Pro";
+    src: url("fonts/SF-Pro-Italic.ttf") format("truetype");
+    font-weight: 1 1000;
+    font-style: italic;
+    font-display: block;
+}
+
 :root {
     --ink: #050505;
     --paper: #f7f5f1;
@@ -12,12 +28,18 @@
     --line: rgba(5, 5, 5, 0.12);
     --white: #fff;
     --red: #dd3d22;
+    --palette-slate-1: #808D9C;
+    --palette-slate-2: #525C69;
+    --palette-slate-3: #384653;
+    --palette-slate-4: #1F2A36;
+    --palette-slate-5: #132233;
+    --palette-slate-6: #091D33;
     --transition: 220ms ease;
     --image-width: 540px;
     --image-height: 400px;
     --section-accent: var(--red);
-    --font-body: "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-    --font-display: "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --font-body: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --font-display: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
 
 html {
@@ -30,6 +52,7 @@ body {
     color: var(--ink);
     overflow-x: hidden;
     text-rendering: optimizeLegibility;
+    font-optical-sizing: auto;
     line-height: 1.5;
 }
 
@@ -125,9 +148,11 @@ a {
 .header-nav a {
     display: grid;
     align-items: center;
+    position: relative;
     font-family: inherit;
     letter-spacing: 0.08em;
-    line-height: 1;
+    line-height: 1.2;
+    min-height: 18px;
     transition:
         color 520ms ease,
         transform 520ms ease,
@@ -153,10 +178,12 @@ a {
 
 .header-nav a::after {
     content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
     display: block;
     width: 100%;
     height: 1px;
-    margin-top: 4px;
     background: currentColor;
     transform: scaleX(0);
     transform-origin: left center;
@@ -258,7 +285,7 @@ a {
     grid-column: 2;
     position: relative;
     z-index: 2;
-    padding-top: 34px;
+    padding-top: 120px;
 }
 
 .eyebrow {
@@ -301,6 +328,7 @@ a {
     color: #111111;
     transform-origin: 50% 100%;
     will-change: transform, filter, opacity;
+    margin-left: -0.04em;
 }
 
 .hero-subtitle {
@@ -388,7 +416,13 @@ a {
 .hero-subtitle,
 .hero-text,
 .scroll-cue {
+    opacity: 0;
     will-change: transform, opacity, filter;
+}
+
+.hero-title,
+.hero-visual {
+    opacity: 0;
 }
 
 /* ===== STORY PANELS ===== */
@@ -405,7 +439,7 @@ a {
     align-items: center;
     gap: clamp(36px, 5vw, 88px);
     padding: 70px 0;
-    border-bottom: 1px solid rgba(5, 5, 5, 0.08);
+    border-bottom: 0;
     position: relative;
     overflow: hidden;
 }
@@ -430,7 +464,7 @@ a {
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background: var(--section-accent);
+    background: white;
     border: 3px solid rgba(255, 255, 255, 0.92);
     box-shadow:
         0 0 0 8px rgba(255, 255, 255, 0.34),
@@ -494,7 +528,20 @@ a {
     z-index: 1;
 }
 
+.story-media::before {
+    content: "";
+    position: absolute;
+    inset: 14% 4%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.06) 38%, transparent 68%);
+    filter: blur(18px);
+    opacity: 0.42;
+    pointer-events: none;
+}
+
 .story-media img {
+    position: relative;
+    z-index: 1;
     width: 500px;
     height: 500px;
     max-width: 100%;
@@ -583,10 +630,12 @@ a {
     --panel-image-height: var(--image-height);
     --panel-image-fit: contain;
     --panel-image-position: 56% 45%;
-    --section-accent: #2e6fc7;
-    background:
-        radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.62), transparent 34%),
-        #dfeafa;
+}
+
+.panel-vinyl {
+    --section-accent: var(--palette-slate-1);
+    background: linear-gradient(180deg, var(--palette-slate-1), var(--palette-slate-2));
+    color: var(--white);
 }
 
 .panel-vinyl .story-media,
@@ -600,10 +649,9 @@ a {
 }
 
 .panel-cassette {
-    --section-accent: #dd3d22;
-    background:
-        radial-gradient(circle at 12% 50%, rgba(255, 255, 255, 0.62), transparent 34%),
-        #f7d8c6;
+    --section-accent: var(--palette-slate-1);
+    background: linear-gradient(180deg, var(--palette-slate-2), var(--palette-slate-3));
+    color: var(--white);
 }
 
 .panel-cassette .story-media {
@@ -631,18 +679,30 @@ a {
 }
 
 .panel-dark {
-    background:
-        radial-gradient(circle at 68% 44%, rgba(255, 255, 255, 0.1), transparent 32%),
-        linear-gradient(135deg, #050505, #171714);
+    background: var(--palette-slate-3);
     color: var(--white);
 }
 
 .panel-dark .story-copy p:not(.story-year),
-.panel-dark .story-year {
+.panel-dark .story-year,
+.panel-vinyl .story-copy p:not(.story-year),
+.panel-vinyl .story-year,
+.panel-cassette .story-copy p:not(.story-year),
+.panel-cassette .story-year,
+.panel-cd .story-copy p:not(.story-year),
+.panel-cd .story-year,
+.panel-streaming .story-copy p:not(.story-year),
+.panel-streaming .story-year,
+.panel-vinyl-today .story-copy p:not(.story-year),
+.panel-vinyl-today .story-year {
     color: rgba(255, 255, 255, 0.78);
 }
 
-.panel-dark::after {
+.panel-dark::after,
+.panel-cassette::after,
+.panel-cd::after,
+.panel-streaming::after,
+.panel-vinyl-today::after {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.24) 16%, rgba(255, 255, 255, 0.24) 84%, rgba(255, 255, 255, 0.08));
 }
 
@@ -651,25 +711,20 @@ a {
 }
 
 .panel-cd {
-    --section-accent: #2f9447;
-    background:
-        radial-gradient(circle at 76% 45%, rgba(255, 255, 255, 0.62), transparent 34%),
-        #d8efd9;
+    --section-accent: var(--palette-slate-1);
+    background: linear-gradient(180deg, var(--palette-slate-3), var(--palette-slate-4));
+    color: var(--white);
 }
 
 .panel-ipod {
-    --section-accent: #d7d7d7;
-    background:
-        radial-gradient(circle at 70% 48%, rgba(255, 255, 255, 0.1), transparent 34%),
-        linear-gradient(135deg, #050505, #171714),
-        #050505;
+    --section-accent: var(--palette-slate-1);
+    background: linear-gradient(180deg, var(--palette-slate-4), var(--palette-slate-5));
 }
 
 .panel-streaming {
-    --section-accent: #8f46c9;
-    background:
-        radial-gradient(circle at 72% 48%, rgba(255, 255, 255, 0.62), transparent 34%),
-        #e7d6f7;
+    --section-accent: var(--palette-slate-1);
+    background: linear-gradient(180deg, var(--palette-slate-5), var(--palette-slate-6));
+    color: var(--white);
 }
 
 .panel-streaming .story-media img {
@@ -678,10 +733,9 @@ a {
 
 .panel-vinyl-today {
     --panel-image-position: 62% 24%;
-    --section-accent: #b18a12;
-    background:
-        radial-gradient(circle at 78% 45%, rgba(255, 255, 255, 0.62), transparent 34%),
-        #f4e8b8;
+    --section-accent: var(--palette-slate-1);
+    background: var(--palette-slate-6);
+    color: var(--white);
 }
 
 /* ===== FINAL ===== */

@@ -65,24 +65,28 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     });
 });
 
-const heroTitle = document.querySelector(".hero-title");
-const heroSubtitle = document.querySelector(".hero-subtitle");
-const heroText = document.querySelector(".hero-text");
-const heroScrollCue = document.querySelector(".scroll-cue");
-const heroVisual = document.querySelector(".hero-visual");
-const heroSection = document.querySelector(".hero");
+const initHeroAnimation = () => {
+    const heroTitle = document.querySelector(".hero-title");
+    const heroSubtitle = document.querySelector(".hero-subtitle");
+    const heroText = document.querySelector(".hero-text");
+    const heroScrollCue = document.querySelector(".scroll-cue");
+    const heroVisual = document.querySelector(".hero-visual");
+    const heroSection = document.querySelector(".hero");
 
-if (
-    heroTitle &&
-    heroSubtitle &&
-    heroText &&
-    heroScrollCue &&
-    heroVisual &&
-    heroSection &&
-    window.gsap &&
-    window.ScrollTrigger &&
-    window.SplitType
-) {
+    if (
+        !heroTitle ||
+        !heroSubtitle ||
+        !heroText ||
+        !heroScrollCue ||
+        !heroVisual ||
+        !heroSection ||
+        !window.gsap ||
+        !window.ScrollTrigger ||
+        !window.SplitType
+    ) {
+        return;
+    }
+
     gsap.registerPlugin(ScrollTrigger);
 
     new SplitType(heroTitle, {
@@ -92,13 +96,17 @@ if (
 
     const titleWords = heroTitle.querySelectorAll(".word");
 
+    gsap.set(heroTitle, {
+        opacity: 1
+    });
+
     gsap.set(titleWords, {
         yPercent: 105,
         opacity: 0
     });
 
     gsap.set([heroSubtitle, heroText, heroScrollCue], {
-        y: 18,
+       
         opacity: 0
     });
 
@@ -109,6 +117,7 @@ if (
     });
 
     const introTimeline = gsap.timeline({
+        paused: true,
         defaults: {
             ease: "power3.out"
         }
@@ -186,4 +195,17 @@ if (
             rotate: -0.75,
             immediateRender: false
         }, 0);
+
+    requestAnimationFrame(() => {
+        introTimeline.play(0);
+        ScrollTrigger.refresh();
+    });
+};
+
+if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(initHeroAnimation);
+} else {
+    window.addEventListener("load", initHeroAnimation, {
+        once: true
+    });
 }
