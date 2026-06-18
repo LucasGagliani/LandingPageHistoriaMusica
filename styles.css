@@ -933,6 +933,7 @@ a {
         justify-self: center;
         text-align: center;
         align-self: center;
+        transform: translateY(-4vh);
     }
 
     .eyebrow {
@@ -979,10 +980,10 @@ a {
 
     .hero-visual {
         right: 50%;
-        top: 57%;
+        top: auto;
+        bottom: -54vw;
         width: 112vw;
-        transform: translate(50%, -50%);
-        opacity: 0.16;
+        transform: translateX(50%);
     }
 
     .record-disc {
@@ -1066,6 +1067,7 @@ a {
     .hero-copy {
         align-self: center;
         text-align: center;
+        transform: translateY(-5vh);
     }
 
     .hero h1 {
@@ -1099,9 +1101,9 @@ a {
     }
 
     .hero-visual {
-        top: 60%;
+        top: auto;
+        bottom: -58vw;
         width: 122vw;
-        opacity: 0.14;
     }
 
     .record-disc {
