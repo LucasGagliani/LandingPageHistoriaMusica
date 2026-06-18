@@ -477,7 +477,7 @@ a {
     grid-column: 2;
     position: relative;
     z-index: 2;
-    width: min(100%, 460px);
+    width: min(100%, 520px);
     justify-self: center;
 }
 
@@ -513,12 +513,11 @@ a {
 }
 
 .story-copy p:not(.story-year) {
-    max-width: 390px;
-    margin-top: 24px;
+    max-width: 480px;
+    margin-top: 20px;
     color: #34312c;
-    font-size: 0.9rem;
-    font-size: clamp(1rem, 1.25vw, 1.18rem);
-    line-height: 1.68;
+    font-size: clamp(0.95rem, 1vw, 1.06rem);
+    line-height: 1.62;
     text-align: justify;
 }
 
@@ -732,10 +731,16 @@ a {
 }
 
 .panel-vinyl-today {
-    --panel-image-position: 62% 24%;
+    --panel-image-position: center;
+    --panel-image-filter: drop-shadow(0 30px 46px rgba(0, 0, 0, 0.5));
     --section-accent: var(--palette-slate-1);
     background: var(--palette-slate-6);
     color: var(--white);
+}
+
+.panel-vinyl-today .story-media img {
+    width: 520px;
+    height: 560px;
 }
 
 /* ===== FINAL ===== */
@@ -913,13 +918,13 @@ a {
     .hero {
         min-height: 100svh;
         grid-template-columns: 20px 1fr 20px;
-        padding: 56px 0 116px;
+        padding: 64px 0 116px;
     }
 
     .hero::after {
         background:
-            radial-gradient(circle at 50% 48%, rgba(255, 255, 255, 0.28), transparent 34%),
-            linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.62));
+            radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.84) 34%, transparent 62%),
+            linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(255, 255, 255, 0.84) 54%, rgba(255, 255, 255, 0.68));
     }
 
     .hero-copy {
@@ -927,6 +932,7 @@ a {
         padding-top: 0;
         justify-self: center;
         text-align: center;
+        align-self: center;
     }
 
     .eyebrow {
@@ -939,16 +945,44 @@ a {
         max-width: 100%;
     }
 
+    .hero-title,
+    .hero-title .word {
+        color: #050505;
+        text-shadow: 0 1px 18px rgba(255, 255, 255, 0.72);
+    }
+
+    .hero-subtitle {
+        color: #151515;
+    }
+
+    .hero-text {
+        color: #3a3732;
+        font-size: 0.96rem;
+        line-height: 1.62;
+        text-align: center;
+    }
+
     .scroll-cue {
         margin: 44px auto 0;
+        color: var(--red);
+        text-shadow: 0 1px 14px rgba(255, 255, 255, 0.82);
+    }
+
+    .scroll-cue i {
+        background: currentColor;
+        box-shadow: 0 0 18px rgba(221, 61, 34, 0.28);
+    }
+
+    .scroll-cue i::after {
+        border-color: currentColor;
     }
 
     .hero-visual {
         right: 50%;
-        top: 50%;
-        width: 118vw;
+        top: 57%;
+        width: 112vw;
         transform: translate(50%, -50%);
-        opacity: 0.26;
+        opacity: 0.16;
     }
 
     .record-disc {
@@ -962,8 +996,8 @@ a {
     .panel-cassette {
         min-height: auto;
         grid-template-columns: 20px 1fr 20px;
-        gap: 30px;
-        padding: 56px 0 56px 34px;
+        gap: 34px;
+        padding: 64px 0 64px 34px;
     }
 
     .story-panel::before {
@@ -988,6 +1022,14 @@ a {
     }
 
     .story-copy {
+        width: min(100%, 560px);
+    }
+
+    .story-copy p:not(.story-year) {
+        max-width: 100%;
+    }
+
+    .story-copy {
         order: 1;
     }
 
@@ -999,7 +1041,7 @@ a {
     .panel-vinyl .story-media img,
     .panel-vinyl-today .story-media img {
         width: 100%;
-        height: 280px;
+        height: 340px;
         min-height: 0;
     }
 
@@ -1018,7 +1060,7 @@ a {
 
     .hero {
         min-height: 100svh;
-        padding: 44px 0 112px;
+        padding: 54px 0 112px;
     }
 
     .hero-copy {
@@ -1027,26 +1069,39 @@ a {
     }
 
     .hero h1 {
-        font-size: 3.55rem;
+        font-size: 3.35rem;
         line-height: 1.06;
     }
 
     .hero-subtitle {
         font-size: 1.12rem;
+        margin-top: 18px;
+    }
+
+    .hero-text {
+        margin-top: 18px;
+        font-size: 0.92rem;
+        line-height: 1.56;
     }
 
     .story-copy h2 {
         font-size: 2.55rem;
     }
 
+    .story-copy p:not(.story-year) {
+        font-size: 0.94rem;
+        line-height: 1.58;
+    }
+
 
     .scroll-cue {
-        margin: 40px auto 0;
+        margin: 34px auto 0;
     }
 
     .hero-visual {
-        width: 132vw;
-        opacity: 0.3;
+        top: 60%;
+        width: 122vw;
+        opacity: 0.14;
     }
 
     .record-disc {
@@ -1059,7 +1114,7 @@ a {
     .story-media img,
     .panel-vinyl .story-media img,
     .panel-vinyl-today .story-media img {
-        height: 220px;
+        height: 300px;
     }
 
     .final-button {
