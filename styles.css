@@ -409,7 +409,14 @@ a {
     position: absolute;
     inset: 10%;
     border-radius: inherit;
-    background: conic-gradient(from 110deg, transparent, rgba(255, 255, 255, 0.13), transparent 24%);
+    background: conic-gradient(
+        from 110deg,
+        transparent 0 7%,
+        rgba(255, 255, 255, 0.32) 13%,
+        transparent 19% 57%,
+        rgba(255, 255, 255, 0.32) 63%,
+        transparent 69% 100%
+    );
     mix-blend-mode: screen;
 }
 
