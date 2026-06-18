@@ -202,10 +202,4 @@ const initHeroAnimation = () => {
     });
 };
 
-if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(initHeroAnimation);
-} else {
-    window.addEventListener("load", initHeroAnimation, {
-        once: true
-    });
-}
+initHeroAnimation();
